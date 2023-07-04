@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="ic_01n_background" />
+    <drawable name="ic_02d_background" />
+    <drawable name="ic_03d_background" />
+    <drawable name="ic_04d_background" />
+    <drawable name="ic_09d_background" />
+    <drawable name="ic_10d_background" />
+    <drawable name="ic_10n_background" />
+    <drawable name="ic_11d_background" />
+    <drawable name="ic_11n_background" />
+</resources>

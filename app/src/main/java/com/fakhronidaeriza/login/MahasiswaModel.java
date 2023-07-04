@@ -1,25 +1,42 @@
 package com.fakhronidaeriza.login;
 
-public class MahasiswaModel {
-    private String NIM, Nama, JenisKelamin, JP;
 
-    public MahasiswaModel() {
+public class MahasiswaModel {
+    private String NIM,Nama, JenisKelamin, JP;
+
+    public MahasiswaModel(){
+
     }
 
-    public String getNIM() { return NIM; }
+    public String getNIM() {
+        return NIM;
+    }
 
-    public void setNIM (String NIM) { this.NIM = NIM;}
+    public void setNIM(String NIM) {
+        this.NIM = NIM;
+    }
 
-    public String getNama() { return Nama; }
+    public String getNama() {
+        return Nama;
+    }
 
-    public void setNama (String nama) { Nama = nama; }
+    public void setNama(String nama) {
+        Nama = nama;
+    }
 
-    public String getJenisKelamin () { return JenisKelamin; }
+    public String getJenisKelamin() {
+        return JenisKelamin;
+    }
 
-    public void setJenisKelamin (String jeniskelamin) { JenisKelamin = jeniskelamin; }
+    public void setJenisKelamin(String jenisKelamin) {
+        JenisKelamin = jenisKelamin;
+    }
 
-    public String getJP() { return JP; }
+    public String getJP() {
+        return JP;
+    }
 
-    public void setJP (String JP) { this.JP = JP; }
+    public void setJP(String JP) {
+        this.JP = JP;
+    }
 }
-

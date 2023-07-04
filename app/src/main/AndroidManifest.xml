@@ -16,6 +16,12 @@
         <activity
             android:name=".TampilMahasiswaActivity"
             android:exported="false" />
+        <activity android:name=".CuacaMainActivity"
+            android:exported="false"
+            android:label="Cuaca Pontianak"/>
+        <activity android:name=".ForexMainActivity"
+            android:exported="false"
+            android:label="Forex" />
         <activity
             android:name=".TambahMahasiswaActivity"
             android:exported="false" />

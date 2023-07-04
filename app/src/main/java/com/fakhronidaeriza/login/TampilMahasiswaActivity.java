@@ -1,14 +1,14 @@
 package com.fakhronidaeriza.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
@@ -22,25 +22,25 @@ import cz.msebera.android.httpclient.Header;
 
 public class TampilMahasiswaActivity extends AppCompatActivity {
 
-    private RecyclerView _recyclerView1;
     private FloatingActionButton _addButton;
-    private int recyclerView1;
+    private RecyclerView _recyclerView1;
 
-    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampil_mahasiswa);
 
-        _recyclerView1 = findViewById(recyclerView1);
+        _recyclerView1 = findViewById(R.id.recyclerView);
 
+        initAddButton();
+        loadRecyclerView();
+    }
+
+    private void loadRecyclerView() {
         AsyncHttpClient ahc = new AsyncHttpClient();
         String url = "https://stmikpontianak.net/011100862/tampilMahasiswa.php";
 
-        ahc.get(url, new AsyncHttpResponseHandler()
-        {
-
+        ahc.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 Gson g = new Gson();
@@ -49,50 +49,28 @@ public class TampilMahasiswaActivity extends AppCompatActivity {
                 RecyclerView.LayoutManager lm = new LinearLayoutManager(TampilMahasiswaActivity.this);
                 _recyclerView1.setLayoutManager(lm);
 
-                MahasiswaAdapter ma = new MahasiswaAdapter(TampilMahasiswaActivity.this, mahasiswaModelList);
+                MahasiswaAdapter ma = new MahasiswaAdapter(mahasiswaModelList);
                 _recyclerView1.setAdapter(ma);
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error)
-            {
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-        initAddButton();
-        loadRecylerView();
     }
-
-    private void loadRecylerView() {
-        AsyncHttpClient ahc = new AsyncHttpClient();
-        String url = "https://stmikpontianak.net/011100862/tampilMahasiswa.php";
-
-        ahc.get(url, new AsyncHttpResponseHandler()
-        {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-            }
-        });
-    }
-
     private void initAddButton() {
         _addButton = findViewById(R.id.addButton);
-
         _addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TambahMahasiswaActivity.class);
                 startActivity(intent);
 
-                loadRecylerView();
+                loadRecyclerView();
             }
         });
+
+
     }
 }
