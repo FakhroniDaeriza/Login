@@ -1,10 +1,11 @@
 package com.fakhronidaeriza.login;
 
-public class CuacaWeatherModel {
-    private String main;
-    private String description;
-    private String icon;
+public class CuacaWeatherModel
+{
+    private String main, description, icon;
 
+    public CuacaWeatherModel() {
+    }
     public String getMain() {
         return main;
     }
@@ -28,7 +29,5 @@ public class CuacaWeatherModel {
     public void setIcon(String icon) {
         this.icon = icon;
     }
-
-    public CuacaWeatherModel(){}
 
 }

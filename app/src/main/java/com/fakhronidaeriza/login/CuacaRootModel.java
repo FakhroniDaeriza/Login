@@ -10,14 +10,13 @@ public class CuacaRootModel
     @SerializedName("list")
     private List<CuacaListModel> listModelList;
 
+    public CuacaRootModel(){}
+
     public List<CuacaListModel> getListModelList() {
         return listModelList;
     }
 
     public void setListModelList(List<CuacaListModel> listModelList) {
         this.listModelList = listModelList;
-    }
-
-    public CuacaRootModel() {
     }
 }

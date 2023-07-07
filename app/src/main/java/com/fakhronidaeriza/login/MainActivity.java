@@ -3,6 +3,7 @@ package com.fakhronidaeriza.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private String _url;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         _loginButton = findViewById(R.id.loginButton1);
         _loginButton.setOnClickListener(new View.OnClickListener() {

@@ -1,9 +1,10 @@
 package com.fakhronidaeriza.login;
 
-public class CuacaMainModel {
-    private double temp_min;
-    private double temp_max;
+public class CuacaMainModel
+{
+    private double temp_min, temp_max;
 
+    public CuacaMainModel(){}
     public double getTemp_min() {
         return temp_min;
     }
@@ -20,7 +21,5 @@ public class CuacaMainModel {
         this.temp_max = temp_max;
     }
 
-    public CuacaMainModel() {
 
-    }
 }

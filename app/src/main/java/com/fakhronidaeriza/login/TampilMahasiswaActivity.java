@@ -30,7 +30,7 @@ public class TampilMahasiswaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampil_mahasiswa);
 
-        _recyclerView1 = findViewById(R.id.recyclerView);
+        _recyclerView1 = findViewById(R.id.recyclerView1);
 
         initAddButton();
         loadRecyclerView();

@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@mipmap/ic_01d"
+            android:src="@android:drawable/star_big_on"
             android:layout_marginRight="10dp"
             android:id="@+id/cuacaImageView"/>
         <LinearLayout
