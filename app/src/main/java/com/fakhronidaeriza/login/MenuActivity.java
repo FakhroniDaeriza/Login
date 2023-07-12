@@ -1,6 +1,7 @@
 package com.fakhronidaeriza.login;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +17,9 @@ import cz.msebera.android.httpclient.Header;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button _btnMahasiswa, _btnForex, _btnCuaca;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent;
+    private Button _btnMahasiswa, _btnForex, _btnCuaca, _tampilImplisitButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilimplisitIntent;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +28,12 @@ public class MenuActivity extends AppCompatActivity {
         _btnMahasiswa = findViewById(R.id.btnMahasiswa);
         _btnForex = findViewById(R.id.btnForex);
         _btnCuaca = findViewById(R.id.btnCuaca);
+        _tampilImplisitButton = findViewById(R.id.tampilImplisitButton);
 
         initTampilMahasiswaButton();
         initTampilForexButton();
         initTampilCuacaButton();
+        initTampilImplisitButton();
     }
 
     private void initTampilMahasiswaButton()
@@ -89,5 +93,21 @@ public class MenuActivity extends AppCompatActivity {
                 }
             });
         }
+
+    private void initTampilImplisitButton()
+    {
+        _tampilImplisitButton = (Button) findViewById(R.id.tampilImplisitButton);
+
+        _tampilImplisitButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                _tampilimplisitIntent = new Intent(getApplicationContext(), ImplisitIntentActivity.class);
+                startActivity(_tampilimplisitIntent);
+            }
+        });
+    }
+
 
 }
