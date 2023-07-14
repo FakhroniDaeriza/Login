@@ -17,8 +17,8 @@ import cz.msebera.android.httpclient.Header;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button _btnMahasiswa, _btnForex, _btnCuaca, _tampilImplisitButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilimplisitIntent;
+    private Button _btnMahasiswa, _btnForex, _btnCuaca, _tampilImplisitButton, _btnlayout;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilimplisitIntent, _tampilTablayout;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,17 @@ public class MenuActivity extends AppCompatActivity {
         _btnCuaca = findViewById(R.id.btnCuaca);
         _tampilImplisitButton = findViewById(R.id.tampilImplisitButton);
 
+
         initTampilMahasiswaButton();
         initTampilForexButton();
         initTampilCuacaButton();
         initTampilImplisitButton();
+        initTampilTablayout();
+    }
+
+    private void initTampilTablayout()
+    {
+
     }
 
     private void initTampilMahasiswaButton()
@@ -108,6 +115,5 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

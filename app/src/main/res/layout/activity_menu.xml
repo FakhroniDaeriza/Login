@@ -47,5 +47,15 @@
     android:text="Implisit Intent"
     android:id="@+id/tampilImplisitButton">
  </Button>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_columnWeight="1"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/img_weather_lightning_128"
+        android:textColor="#fff"
+        android:text="Tablayout"
+        android:id="@+id/tabLayout1">
+    </Button>
 
 </GridLayout>
